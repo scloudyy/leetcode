@@ -21,19 +21,19 @@ class Solution {
 	int removeElement02(vector<int>& nums, int val) {
 		// 使用数组的方式
 		int index = 0;
-		for (int i = 0; i < nums.size(); ++i)
+		for (int i = 0; i < nums.size(); ++i) {
 			if (nums[i] != val)
 				nums[index++] = nums[i];
+		}
 		return index;
 	}
 
 	int removeElement03(vector<int>& nums, int val) {
 		// 使用STL
-		auto iter = nums.end();
-    while((iter = find(nums.begin(), nums.end(), val)) != nums.end())
-        {
-            nums.erase(iter);
-        }
+		auto it = nums.end();
+		while((it = find(nums.begin(), nums.end(), val)) != nums.end()) {
+			nums.erase(it);
+		}
     return nums.size();
 	}
 
@@ -56,19 +56,19 @@ int main() {
 	vector<int> vec;
 	int size;
 
-	Solution* slt = new Solution();
+	Solution* sln = new Solution();
 
-	vec = slt->testcase();
-	size = slt->removeElement01(vec, 3);
-	slt->output(vec, size);
+	vec = sln->testcase();
+	size = sln->removeElement01(vec, 3);
+	sln->output(vec, size);
 
-	vec = slt->testcase();
-	size = slt->removeElement02(vec, 3);
-	slt->output(vec, size);
+	vec = sln->testcase();
+	size = sln->removeElement02(vec, 3);
+	sln->output(vec, size);
 
-	vec = slt->testcase();
-	size = slt->removeElement03(vec, 3);
-	slt->output(vec, size);
+	vec = sln->testcase();
+	size = sln->removeElement03(vec, 6);
+	sln->output(vec, size);
 
-	delete slt;
+	delete sln;
 }
