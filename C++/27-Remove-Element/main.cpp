@@ -5,23 +5,23 @@
 using namespace std;
 
 class Solution {
-	public:
-	int removeElement01(vector<int>& nums, int val) {
-		// 使用迭代器
-		vector<int>::iterator it;
-		for(it = nums.begin(); it != nums.end();) {
-			if (*it == val)
-				it = nums.erase(it);
-			else
-				it++;
-		}
-		return nums.size();
-	}
+public:
+    int removeElement01(vector<int>& nums, int val) {
+        // 使用迭代器
+        vector<int>::iterator it;
+        for(it = nums.begin(); it != nums.end();) {
+            if (*it == val)
+                it = nums.erase(it);
+            else
+                it++;
+        }
+        return nums.size();
+    }
 
-	int removeElement02(vector<int>& nums, int val) {
-		// 使用数组的方式
-		int index = 0;
-		for (int i = 0; i < nums.size(); ++i) {
+    int removeElement02(vector<int>& nums, int val) {
+        // 使用数组的方式
+        int index = 0;
+        for (int i = 0; i < nums.size(); ++i) {
 			if (nums[i] != val)
 				nums[index++] = nums[i];
 		}
