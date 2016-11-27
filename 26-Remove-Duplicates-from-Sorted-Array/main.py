@@ -4,6 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        if len(nums) == 0:
+            return 0
         index = 1
         val = nums[0]
         for i in nums[1:]:
@@ -18,7 +20,7 @@ class Solution(object):
         print(nums[:size])
 
 if __name__ == '__main__':
-    nums = [1, 2, 2, 3, 3]
+    nums = [1]
     sln = Solution()
 
     size = sln.removeDuplicates(nums)
