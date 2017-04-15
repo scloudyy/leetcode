@@ -23,7 +23,7 @@ public:
     int removeElement02(vector<int>& nums, int val) {
         // 使用数组的方式
         int index = 0;
-        for (int i = 0; i < nums.size(); ++i) {
+        for (int i = 0; i < nums.size(); i++) {
 			if (nums[i] != val) {
 				nums[index++] = nums[i];
             }
@@ -47,8 +47,7 @@ public:
     }
 
     void output(const vector<int> &nums, int size) {
-        int i = 0;
-        for(i; i < size; i++) {
+        for(int i = 0; i < size; i++) {
             cout << nums[i] << " ";
         }
         cout << endl << "size: " << size << endl;
