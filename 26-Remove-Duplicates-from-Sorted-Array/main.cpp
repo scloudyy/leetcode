@@ -17,10 +17,11 @@ public:
         }
         return index + 1;
     }
-    vector<int> testcase() {
-        int a[4] = {1, 1, 2, 2};
-        vector<int> v(a, a + sizeof(a) / sizeof(int));
-        return v; 
+
+    void testcase(vector<int>& nums) {
+        int arr[4] = {1, 1, 2, 2};
+        vector<int> vec(arr, arr + sizeof(arr) / sizeof(int));
+        nums.swap(vec);
     }
 
     void output(const vector<int>& nums, int size) {
@@ -37,7 +38,7 @@ int main() {
    
    Solution* sln = new Solution();
 
-   vec = sln->testcase();
+   sln->testcase(vec);
    size = sln->removeDuplicates01(vec);
    sln->output(vec, size);
 }

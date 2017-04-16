@@ -40,10 +40,10 @@ public:
         return nums.size();
     }
 
-    vector<int> testcase() {
+    void testcase(vector<int>& nums) {
         int arr[6] = {1, 2, 3, 4, 5, 6};
         vector<int> vec(arr, arr + sizeof(arr) / sizeof(int));
-        return vec;
+        nums.swap(vec);
     }
 
     void output(const vector<int> &nums, int size) {
@@ -60,15 +60,15 @@ int main() {
 
     Solution* sln = new Solution();
 
-    vec = sln->testcase();
+    sln->testcase(vec);
     size = sln->removeElement01(vec, 3);
     sln->output(vec, size);
 
-    vec = sln->testcase();
+    sln->testcase(vec);
     size = sln->removeElement02(vec, 3);
     sln->output(vec, size);
 
-    vec = sln->testcase();
+    sln->testcase(vec);
     size = sln->removeElement03(vec, 6);
     sln->output(vec, size);
 
