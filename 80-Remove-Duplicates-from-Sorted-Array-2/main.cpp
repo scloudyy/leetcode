@@ -19,6 +19,16 @@ public:
         return index + 1;
     }
 
+    int removeDuplicates02(vector<int>& nums) {
+        int i = 0;
+        for (int n : nums) {
+            if (i < 2 || n > nums[i - 2]) {
+                nums[i++] = n;
+            }
+        }
+        return i;
+    }
+
     void testcase(vector<int>& nums) {
         int arr[6] = {1,1,1,2,2,3};
         vector<int> vec(arr, arr + sizeof(arr) / sizeof(int));
@@ -41,5 +51,9 @@ int main() {
 
     sln->testcase(vec);
     size = sln->removeDuplicates01(vec);
+    sln->output(vec, size);
+
+    sln->testcase(vec);
+    size = sln->removeDuplicates02(vec);
     sln->output(vec, size);
 }
